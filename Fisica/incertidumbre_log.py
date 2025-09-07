@@ -1,29 +1,10 @@
 import math
 
 # Datos
-values = [
-2.517,
-4.089,
-3.562,
-3.604,
-3.958,
-4.155,
-3.72,
-3.019,
-2.513,
-3.759,
-3.516,
-3.806,
-3.767,
-3.459,
-4.38,
-3.425,
-3.606,
-2.44,
-3.821,
-3.418,
-]
-div_escala = 0.01
+values = [9.246, 3.416, 3.206, 5.631, 4.165, 5.377, 3.347, 3.423, 3.864, 4.679]
+
+
+div_escala = 0.001
 
 # Paso 1 
 media = sum(values) / len(values)
@@ -48,5 +29,5 @@ print(f'U: {U}')
 print('\n')
 
 print(f"N: {len(values)}")
-print(f"({media} +- {U})")
+print(f"({round(media, 3)} ± {round(U, 3)})")
 
