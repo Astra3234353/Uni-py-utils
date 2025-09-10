@@ -5,7 +5,21 @@ import math
 """
     En values pon los valores de cada variables. Y en caso de ser necesario, modifica la division de escala.
 """
-values = [9.246, 3.416, 3.206, 5.631, 4.165, 5.377, 3.347, 3.423, 3.864, 4.679]
+values = [
+8.7,
+6.44,
+6.60,
+6.7,
+7.7,
+7.73,
+8.40,
+9.26,
+7.47,
+6.19,
+
+
+
+]
 div_escala = 0.001
 
 
