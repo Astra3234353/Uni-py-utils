@@ -1,14 +1,18 @@
-estEsperados = 5
+estEsperados = 3
 
-califTot = 0
+califTot = [None] * estEsperados
+lista = [None] * 3
+calif= [None] * 3
+
 estNum = 0
 
-while estEsperados > estNum:
-  num = int(input('Cual fue tu calificacion? \n'))
-  califTot += num
+for i in range(estEsperados):
+  for y in range(3):
+    n = int(input('Ingresa tu calid del examen %d\n' % y))
+    lista[y] = n
+    calif[y] += n
+
+  califTot[i] = lista
+
   estNum +=1
 
-media = califTot / estNum
-
-print('La calificacion total fue de: %d' % califTot)
-print('La media es de: %d' % media)
