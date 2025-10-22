@@ -1,0 +1,9 @@
+%chk=C:\Users\Xc0rp\Desktop\quimica\NaCl-1_0.chk
+#p b3lyp/3-21g
+
+Title Card Required
+
+-1 2
+ Na                0.00000000    0.00000000    1.75000000
+ Cl                0.00000000    0.00000000    0.00000000
+

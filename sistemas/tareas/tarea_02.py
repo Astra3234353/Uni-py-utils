@@ -12,7 +12,6 @@ while user_num != secret_num:
   if user_num < secret_num:
     print('Demasiado bajo...')
   elif user_num > secret_num:
-    print('Demas0' \
-    '5iado alto.10..')
+    print('Demasiado alto.10..')
   elif user_num == secret_num:
     print('Ganaste!')
