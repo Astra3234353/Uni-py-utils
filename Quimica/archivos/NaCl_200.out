@@ -1,4 +1,4 @@
- Entering Link 1 = C:\G09W\l1.exe PID=     21780.
+ Entering Link 1 = C:\G09W\l1.exe PID=     28480.
   
  Copyright (c) 1988,1990,1992,1993,1995,1998,2003,2009,2013,
             Gaussian, Inc.  All Rights Reserved.
@@ -71,7 +71,7 @@
  
  ******************************************
  Gaussian 09:  IA32W-G09RevD.01 24-Apr-2013
-                20-Oct-2025 
+                24-Oct-2025 
  ******************************************
  %chk=C:\Users\Xc0rp\Desktop\quimica\NaCl-1_0.chk
  --------------
@@ -84,7 +84,7 @@
  5/5=2,38=5/2;
  6/7=2,8=2,9=2,10=2,28=1/1;
  99/5=1,9=1/99;
- Leave Link    1 at Mon Oct 20 18:34:08 2025, MaxMem=           0 cpu:         0.0
+ Leave Link    1 at Fri Oct 24 08:58:22 2025, MaxMem=           0 cpu:         0.0
  (Enter C:\G09W\l101.exe)
  -------------------
  Title Card Required
@@ -108,7 +108,7 @@
  NQMom=   10.4000000  -8.1650000
  NMagM=    2.2175200   0.8218740
  AtZNuc=  11.0000000  17.0000000
- Leave Link  101 at Mon Oct 20 18:34:08 2025, MaxMem=    33554432 cpu:         0.0
+ Leave Link  101 at Fri Oct 24 08:58:22 2025, MaxMem=    33554432 cpu:         0.0
  (Enter C:\G09W\l202.exe)
                           Input orientation:                          
  ---------------------------------------------------------------------
@@ -133,7 +133,7 @@
       2         17           0        0.000000    0.000000    0.785714
  ---------------------------------------------------------------------
  Rotational constants (GHZ):      0.0000000      9.1087599      9.1087599
- Leave Link  202 at Mon Oct 20 18:34:08 2025, MaxMem=    33554432 cpu:         0.0
+ Leave Link  202 at Fri Oct 24 08:58:22 2025, MaxMem=    33554432 cpu:         0.0
  (Enter C:\G09W\l301.exe)
  Standard basis: 3-21G (6D, 7F)
  Ernie: Thresh=  0.10000D-02 Tol=  0.10000D-05 Strict=F.
@@ -162,7 +162,7 @@
  Integral buffers will be    262144 words long.
  Raffenetti 2 integral format.
  Two-electron integral symmetry is turned on.
- Leave Link  301 at Mon Oct 20 18:34:08 2025, MaxMem=    33554432 cpu:         0.0
+ Leave Link  301 at Fri Oct 24 08:58:23 2025, MaxMem=    33554432 cpu:         0.0
  (Enter C:\G09W\l302.exe)
  NPDir=0 NMtPBC=     1 NCelOv=     1 NCel=       1 NClECP=     1 NCelD=      1
          NCelK=      1 NCelE2=     1 NClLst=     1 CellRange=     0.0.
@@ -173,10 +173,10 @@
  IXCGrd= 4 IRadAn=           0 IRanWt=          -1 IRanGd=           0 AccXCQ= 0.00D+00.
  Generated NRdTot=       0 NPtTot=           0 NUsed=           0 NTot=          16
  NSgBfM=    25    25    25    25    25 MxSgAt=     2 MxSgA2=     2.
- Leave Link  302 at Mon Oct 20 18:34:09 2025, MaxMem=    33554432 cpu:         1.0
+ Leave Link  302 at Fri Oct 24 08:58:23 2025, MaxMem=    33554432 cpu:         0.0
  (Enter C:\G09W\l303.exe)
  DipDrv:  MaxL=1.
- Leave Link  303 at Mon Oct 20 18:34:09 2025, MaxMem=    33554432 cpu:         0.0
+ Leave Link  303 at Fri Oct 24 08:58:23 2025, MaxMem=    33554432 cpu:         0.0
  (Enter C:\G09W\l401.exe)
  ExpMin= 2.44D-02 ExpMax= 1.38D+03 ExpMxC= 1.38D+03 IAcc=3 IRadAn=         5 AccDes= 0.00D+00
  Harris functional with IExCor=  402 and IRadAn=       5 diagonalized for initial guess.
@@ -202,7 +202,7 @@
                  (PI) (SG)
  The electronic state of the initial guess is 2-SG.
  Initial guess <Sx>= 0.0000 <Sy>= 0.0000 <Sz>= 0.5000 <S**2>= 0.7500 S= 0.5000
- Leave Link  401 at Mon Oct 20 18:34:09 2025, MaxMem=    33554432 cpu:         0.0
+ Leave Link  401 at Fri Oct 24 08:58:23 2025, MaxMem=    33554432 cpu:         0.0
  (Enter C:\G09W\l502.exe)
  UHF open shell SCF:
  Using DIIS extrapolation, IDIIS=  1040.
@@ -361,7 +361,7 @@
  KE= 6.173022339839D+02 PE=-1.582323648510D+03 EE= 2.961926619959D+02
  Annihilation of the first spin contaminant:
  S**2 before annihilation     0.7502,   after     0.7500
- Leave Link  502 at Mon Oct 20 18:34:10 2025, MaxMem=    33554432 cpu:         1.0
+ Leave Link  502 at Fri Oct 24 08:58:23 2025, MaxMem=    33554432 cpu:         0.0
  (Enter C:\G09W\l601.exe)
  Copying SCF densities to generalized density rwf, IOpCl= 1 IROHF=0.
 
@@ -472,20 +472,16 @@
  ---------------------------------------------------------------------------------
 
  No NMR shielding tensors so no spin-rotation constants.
- Leave Link  601 at Mon Oct 20 18:34:10 2025, MaxMem=    33554432 cpu:         0.0
+ Leave Link  601 at Fri Oct 24 08:58:24 2025, MaxMem=    33554432 cpu:         0.0
  (Enter C:\G09W\l9999.exe)
- 1|1|UNPC-ALEXHPENVY|SP|UB3LYP|3-21G|Cl1Na1(1-,2)|XC0RP|20-Oct-2025|0||
+ 1|1|UNPC-ALEXHPENVY|SP|UB3LYP|3-21G|Cl1Na1(1-,2)|XC0RP|24-Oct-2025|0||
  #p b3lyp/3-21g||Title Card Required||-1,2|Na,0,0.,0.,2.|Cl,0,0.,0.,0.|
  |Version=IA32W-G09RevD.01|State=2-SG|HF=-619.3506835|S2=0.750173|S2-1=
  0.|S2A=0.75|RMSD=1.476e-009|Dipole=0.,0.,-1.5333219|Quadrupole=5.71029
  88,5.7102988,-11.4205976,0.,0.,0.|PG=C*V [C*(Na1Cl1)]||@
 
 
- A MAN SHOULD NEVER BE ASHAMED TO OWN HE HAS BEEN IN THE WRONG
- WHICH IS BUT SAYING IN OTHER WORDS,
- THAT HE IS WISER TODAY THAN HE WAS YESTERDAY.
-
-                          -- JONATHAN SWIFT
+ BLACK HOLES SUCK.
  Job cpu time:       0 days  0 hours  0 minutes  2.0 seconds.
  File lengths (MBytes):  RWF=      5 Int=      0 D2E=      0 Chk=      1 Scr=      1
- Normal termination of Gaussian 09 at Mon Oct 20 18:34:10 2025.
+ Normal termination of Gaussian 09 at Fri Oct 24 08:58:24 2025.
