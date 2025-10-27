@@ -29,7 +29,7 @@ distancia = np.array([
 
 ])
 
-energia = np.array([
+energia_no_ajustada = np.array([
 1.411899,
 0.822245,
 0.387576,
@@ -51,8 +51,6 @@ energia = np.array([
 -0.001227,
 -0.001082,
 -0.000959
-
-
 ])
 
 
@@ -62,7 +60,7 @@ energia = np.array([
 # Calculos
 
 #!!!!!!!!!!! Ajuste de energias
-# energia = np.array([x - energia_no_ajustada[-1] for x in energia_no_ajustada])
+energia = np.array([x - energia_no_ajustada[-1] for x in energia_no_ajustada])
 
 idx_min = np.argmin(energia)
 r0 = distancia[idx_min]
