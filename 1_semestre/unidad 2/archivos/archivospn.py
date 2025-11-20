@@ -1,7 +1,7 @@
  
 def escribir_tabla(lista):
-    nombre_archivo="archivos.txt"
     f=open('archivos.txt','a')
+    
     for elemento in lista:
         for subelemento in elemento:
             f.write(subelemento+'\t')

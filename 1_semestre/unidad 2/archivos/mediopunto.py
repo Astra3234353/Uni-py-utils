@@ -1,6 +1,3 @@
-def prom(*n):
-    """Calcula el promedio (media aritmética) de una lista de números."""
-    return sum(n) / len(n)
+conjunto = {1, 2, 3, False}.add(2)
 
-promedio = prom(10, 20, 30, 40,50 ,60,78)
-print(promedio) 
+print(conjunto)
