@@ -55,7 +55,6 @@ usuario = {
 }
 
 
-
 ### 2. Creacion de funciones.
 funciones_disponibles = pd.Series(['ver cuartos', 'agregar cuartos', 'calculo de reservacion', 'calculo total', 'agregar servicio', 'factura de restaurante', 'factura de lavanderia', 'help', 'salir'])
 
@@ -93,14 +92,14 @@ def cuartos_fun():
       cuarto_completo = dict(opciones_cuartos[seleccion])
       # use dict para opciones_cuartos[seleccion] no modificar opciones_cuartos original
 
-      dias = int(input('Cuantas noches se quedara?: '))
+      dias = obtener_numero_valido('Cuantas noches se quedara?: ')
       cuarto_completo["dias"] = dias
       print(f"\ntu seleccion fue {seleccion}:\n {cuarto_completo}")
       print(f" - - -Por {dias} noches el precio sera de {dias * cuarto_completo['coste']}")
       r = input('Reservar cuarto? (Y/n): ')
       if r == 'Y':
 
-        q = int(input('Para cuantas personas son?: '))
+        q = obtener_numero_valido('Para cuantas personas son?: ')
         if q <= cuarto_completo["capacidad"]:
           cuarto_completo["habitacion"] = random.randint(100, 200)
           usuario["reservacion_guardada"].append(cuarto_completo)
@@ -135,8 +134,8 @@ def buscar_alimento():
     Funcion que pide un alimento y lo busca en el menu, para agregarlo a la cuenta del usuario
   """
   r = input('Que alimento te interesa?: ')
-  print()
   for item in servicios_extras['restaurante'].items():
+    print(item)
     if item[0] == r:
       print(f'Agregaste {item[0]} por {item[1]}\n')
       usuario['servicios_extras']['restaurante'].append(item)
@@ -146,8 +145,8 @@ def alimento_calculo():
   final_price = 0
   for price in usuario['servicios_extras']['restaurante']:
     final_price += price[1]
-  print('La factura del restaurante contiene:\n')
-  print({usuario['servicios_extras']['restaurante']})
+  print('La factura del restaurante contiene:')
+  print(usuario['servicios_extras']['restaurante'])
   return final_price
 
 
@@ -155,7 +154,7 @@ def lavanderia_calculo():
   total = 0
   for n in usuario['servicios_extras']['lavanderia']:
     total += n
-  print('La factura de la lavanderia contiene:\n')
+  print('La factura de la lavanderia contiene:')
   print(usuario['servicios_extras']['lavanderia'])
   return total
 
@@ -175,7 +174,7 @@ def servicios_fun():
     print(f'El servicio de lavanderia tiene un coste de {servicios_extras["lavanderia"]["prenda"]}')
     r = input('Va a usar el servicio> (Y/n): ')
     if r == 'Y':
-      n = int(input('Cuanta prendas va a lavar? '))
+      n = obtener_numero_valido('Cuantas prendas va a lavar?: ')
       usuario['servicios_extras']['lavanderia'] += [servicios_extras["lavanderia"]["prenda"]] * n
       print(f'Se agrego ${[servicios_extras["lavanderia"]["prenda"]] * n} a tu cuenta \n')
   else:
@@ -187,9 +186,7 @@ def usuario_calculo():
   precio += cuarto_calculo()
   precio += alimento_calculo()
   precio += lavanderia_calculo()
-  print(f"El coste de tus servicios sera de: {precio}")
-  
-  
+  print(f"\n--El coste total de tus servicios sera de: {precio}")
 
 
 def generar_accion(stri):
@@ -210,6 +207,30 @@ def generar_accion(stri):
     print(f"El calculo de los cuartos es: {cuarto_calculo()}")
   elif stri == 'help':
     help()
+
+### 2.5 Utils (Funciones que simplifican codigo)
+
+def obtener_numero_valido(mensaje_entrada="Por favor, introduce un número: "):
+    """
+    Pide al usuario un número y repite la solicitud hasta que la entrada
+    sea un número entero válido.
+
+    Args:
+        mensaje_entrada (str): El mensaje a mostrar al pedir la entrada.
+
+    Returns:
+        int: El número entero válido introducido por el usuario.
+    """
+    while True:
+        try:
+            entrada = input(mensaje_entrada)
+            numero = int(entrada)
+            return numero
+
+        except ValueError:
+            print("La entrada no es un número entero válido. Por favor, inténtalo de nuevo.")
+
+
 
 
 ### 3. Activacion del programa.
