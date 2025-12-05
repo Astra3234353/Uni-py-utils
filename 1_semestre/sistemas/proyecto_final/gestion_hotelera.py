@@ -1,6 +1,6 @@
 import pandas as pd
 import random
-
+import time
 # Este programa de gestion se divide en 3 partes;
   # 1. Creacion de variable, simulando una base de datos.
   # 2. Creacion de funciones.
@@ -12,22 +12,22 @@ opciones_cuartos = {
   'cuarto_1': {
     'coste': 900,
     'capacidad': 3,
-    'descripcion': 'Es un cuarto para 3 personas'
+    'descripcion': 'Cuarto sencillo '
   },
   'cuarto_2': {
     'coste': 1250,
     'capacidad': 4,
-    'descripcion': 'Es un cuarto '
+    'descripcion': 'Cuarto sencillo '
   },
   'cuarto_3': {
     'coste': 1800,
     'capacidad': 5,
-    'descripcion': 'Es un cuarto '
+    'descripcion': 'Cuarto sencillo '
   },
   'cuarto_4': {
     'coste': 2500,
     'capacidad': 3,
-    'descripcion': 'Es un cuarto '
+    'descripcion': 'Cuarto de lujo '
   }
 }
 
@@ -51,14 +51,13 @@ usuario = {
     'lavanderia': []
   },
   'fecha_entrada': '',
-  'fecha_salida': ''
 }
 
 
 
 ### 2. Creacion de funciones.
-funciones_disponibles = pd.Series(['ver cuartos', 'agregar cuartos', 'calculo de reservacion', 'calculo total', 'agregar servicio', 'factura de restaurante', 'factura de lavanderia', 'help', 'salir'])
-
+funciones_disponibles = pd.Series(['agregar cuartos', 'calculo de reservacion', 'calculo total', 'agregar servicio', 'factura de restaurante', 'factura de lavanderia', 'help', 'salir'])
+n_disponibles = ['0','1','2','3','4','5','6','7']
 def help():
   """
     Es una funcion para mostrar las claves de las funciones
@@ -72,7 +71,7 @@ def pedir_datos():
   usuario['nombre'] = input('Ingrese su nombre: ')
   usuario['direccion'] = input('Ingrese su direccion: ')
   usuario['fecha_entrada'] = input('Cuando sera su fecha de entrada?: ')
-  usuario['fecha_salida'] = input('Cuando sera su fecha de salida?: ')
+
 
 
 def cuartos_fun():
@@ -83,7 +82,7 @@ def cuartos_fun():
 
   print(pd_cuartos)
   interesado = input('Interesado en algun cuarto? (Y/n): ')
-  if interesado == 'Y':
+  if interesado == 'Y' or interesado == 'y':
     opciones = []
     for opcion in opciones_cuartos.keys():
       opciones.append(opcion)
@@ -98,7 +97,7 @@ def cuartos_fun():
       print(f"\ntu seleccion fue {seleccion}:\n {cuarto_completo}")
       print(f" - - -Por {dias} noches el precio sera de {dias * cuarto_completo['coste']}")
       r = input('Reservar cuarto? (Y/n): ')
-      if r == 'Y':
+      if r == 'Y' or  r == 'y':
 
         q = int(input('Para cuantas personas son?: '))
         if q <= cuarto_completo["capacidad"]:
@@ -147,7 +146,7 @@ def alimento_calculo():
   for price in usuario['servicios_extras']['restaurante']:
     final_price += price[1]
   print('La factura del restaurante contiene:\n')
-  print({usuario['servicios_extras']['restaurante']})
+  print(usuario['servicios_extras']['restaurante'])
   return final_price
 
 
@@ -168,13 +167,13 @@ def servicios_fun():
     for item in servicios_extras['restaurante'].items():
       print(f"-- {item[0]} | {item[1]}")
     r = input('Quieres comprar algun producto? (Y/n): ')
-    if r == "Y":
+    if r == 'Y' or r == 'y':
       buscar_alimento()
     
   elif servicio == 'lavanderia':
     print(f'El servicio de lavanderia tiene un coste de {servicios_extras["lavanderia"]["prenda"]}')
     r = input('Va a usar el servicio> (Y/n): ')
-    if r == 'Y':
+    if r == 'Y' or r == 'y':
       n = int(input('Cuanta prendas va a lavar? '))
       usuario['servicios_extras']['lavanderia'] += [servicios_extras["lavanderia"]["prenda"]] * n
       print(f'Se agrego ${[servicios_extras["lavanderia"]["prenda"]] * n} a tu cuenta \n')
@@ -194,22 +193,30 @@ def usuario_calculo():
 
 def generar_accion(stri):
   """
-    Es una funcion guia para cargar una funcion en base a un string
+  Es una funcion guia para cargar una funcion en base a un string
   """
-  if 'cuartos' in stri:
+  
+  if stri == 'agregar cuartos' or stri == '0':
     cuartos_fun()
-  elif stri == 'calculo total':
+
+  elif stri == 'calculo total' or stri == '2':
     usuario_calculo()
-  elif stri == 'agregar servicio':
+
+  elif stri == 'agregar servicio' or stri == '3':
     servicios_fun()
-  elif stri == 'factura de restaurante':
+
+  elif stri == 'factura de restaurante' or stri == '4':
     print(f"La factura del restaurante es de: {alimento_calculo()}")
-  elif stri == 'factura de lavanderia':
+
+  elif stri == 'factura de lavanderia' or stri == '5':
     print(f"La factura de la lavanderia es de: {lavanderia_calculo()}")
-  elif stri == 'calculo de reservacion':
+
+  elif stri == 'calculo de reservacion' or stri == '1':
     print(f"El calculo de los cuartos es: {cuarto_calculo()}")
-  elif stri == 'help':
+
+  elif stri == 'help' or stri == '6':
     help()
+
 
 
 ### 3. Activacion del programa.
@@ -222,15 +229,17 @@ help()
 while servicio_activo == True:
   accion = input('\n=========\nIngresa la accion que deseas ejecutar, si necesitas ver las acciones disponibles ingresa help\n=========\n')
 
-  while accion not in funciones_disponibles.values:
+  while accion not in funciones_disponibles.values and accion not in n_disponibles:
     print('=========\nEsa no es una accion valida...')
     accion = input('Que accion deseas hacer, si necesitas ver las acciones disponibles ingresa help\n=========\n')
 
   print('\n')
-  if accion == 'salir':
+  if accion == 'salir' or accion == '7':
     servicio_activo = False
     print('\n\n\nMostrando log del hospedaje del usuario:')
     usuario_calculo()
+    print("El programa se cerrará en 15 segundos...")
+    time.sleep(15)
     break
 
   generar_accion(accion)
